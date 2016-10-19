@@ -1,0 +1,121 @@
+html, body {
+  background-color: black;
+  height: 100%;
+  margin: 0
+}
+
+#prompt {
+  background: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+#prompt > * {
+  margin: 3rem
+}
+#prompt > .separator {
+  color: white;
+  display: table
+}
+#prompt > .separator:before,
+#prompt > .separator:after {
+  border-top: 1px solid #333;
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 0.5em;
+  width: 45%;
+}
+#flash {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  line-height: 2rem;
+  margin: 0;
+  background: red;
+  color: black;
+  text-align: center;
+  visibility: visible;
+  opacity: 0.99;
+  transition: visibility 0s
+}
+#flash.off {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 4s, opacity 1s 3s
+}
+
+#room {
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #27C142 linear-gradient(45deg, #49CB60 25%, transparent 25%, transparent 50%, #49CB60 50%, #49CB60 75%, transparent 75%) repeat scroll 0% 0% / 30px 30px;
+}
+
+video {
+  position: absolute
+}
+
+#local {
+  z-index: 1;
+  right: 0;
+  top: 75%;
+  width: 25%;
+  height: 25%
+}
+
+#remote {
+  width: 100%;
+  height: 100%
+}
+
+:-webkit-full-screen { width: 100%; height: 100% }
+:-moz-full-screen { width: 100%; height: 100% }
+:-webkit-full-screen > #remote { background: #000 }
+:-moz-full-screen > #remote { background: #000 }
+:-webkit-full-screen > #local { background: inherit }
+:-moz-full-screen > #local { background: inherit }
+
+#chat {
+  position: absolute;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.2) none repeat scroll 0% 0%;
+  width: 75%;
+  bottom: 0;
+  height: 25%;
+}
+
+#display {
+  height: calc(100% - 1.8em);
+  overflow: auto;
+  word-wrap: break-word
+}
+
+#input {
+  border: 0;
+  outline: 0;
+  padding: .3em .5em;
+  font-family: serif;
+  font-size: 12pt;
+  width: calc(100% - 1em)
+}
+
+p {
+  margin: .5em .8em;
+  font-weight: bold
+}
+
+.remotemsg {
+  color: #020
+}
+
+.hide {
+  display: none !important
+}

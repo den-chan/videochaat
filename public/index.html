@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <title>Basic video chat</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:;base64,=">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <section id="prompt">
+    <div id="flash" class="off">
+      <span id="flashMsg"></span>
+    </div>
+    <div id="create">
+      <input id="createPass" type="password" placeholder="Passphrase">
+      <button id="createButton">Enter new room</button>
+    </div>
+    <div class="separator">OR</div>
+    <div id="enter">
+      <input id="entryPass" type="password" placeholder="Passphrase">
+      <button id="entryButton">Enter existing room</button>
+    </div>
+  </section>
+  <section id="room" class="hide">
+    <div id="chat">
+      <div id="display"></div>
+      <input id="chatField" type="text" placeholder="Type to chat">
+    </div>
+    <video id="local" autoplay></video>
+    <video id="remote" autoplay></video>
+  </section>
+  <script src="chat.js"></script>
+</body>
